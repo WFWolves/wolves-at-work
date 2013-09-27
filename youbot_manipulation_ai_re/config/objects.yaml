@@ -1,0 +1,15 @@
+objects/object0:
+    name: 'Big alu profile'
+    length: 0.05
+objects/object1:
+    name: 'Thin alu profile'
+    length: 0.05
+objects/object2:
+    name: 'Rough small cylinder'
+    length: 0.03
+objects/object3:
+    name: 'Smooth small cylinder'
+    length: 0.03
+objects/object4:
+    name: 'Big Screw'
+    length: 0.05

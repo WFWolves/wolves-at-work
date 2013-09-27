@@ -1,0 +1,12 @@
+<launch>
+    <include file="$(find youbot_scanner_alignment)/launch/scanner_alignment_action_server.launch" />
+    <node pkg="youbot_manipulation_ai_re" type="DepositObject.py" name="youbot_manipulation_ai_re" output="screen">
+
+        <!-- Load configuration files -->
+        <rosparam file="$(find youbot_manipulation_ai_re)/config/circle.yaml" command="load" />
+        <rosparam file="$(find youbot_manipulation_ai_re)/config/line.yaml" command="load" />
+        <rosparam file="$(find youbot_manipulation_ai_re)/config/zigzag.yaml" command="load" />
+    	<rosparam file="$(find youbot_manipulation_ai_re)/config/service_areas.yaml" command="load" />
+   		<rosparam file="$(find youbot_manipulation_ai_re)/config/misc.yaml" command="load" />
+    </node>
+</launch>

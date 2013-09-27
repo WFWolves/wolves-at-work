@@ -1,0 +1,3 @@
+refbox:
+    server_ip: '192.168.142.1'
+    server_port: '11111'

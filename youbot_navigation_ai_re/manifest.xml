@@ -1,0 +1,21 @@
+<package>
+  <description brief="youbot_navigation_ai_re">
+
+     youbot_navigation_ai_re
+
+  </description>
+  <author>Jens</author>
+  <license>CC BY-NC-SA-  https://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+  <review status="unreviewed" notes=""/>
+  <url>https://github.com/robocup-at-work/wfwolves/youbot_navigation_ai_re</url>
+  <depend package="rospy"/>
+  <depend package="smach"/>
+  <depend package="smach_ros"/>
+  <depend package="geometry_msgs"/>
+  <depend package="tf"/>
+  <depend package="nav_msgs"/>
+  <depend package="move_base"/>
+
+</package>
+
+

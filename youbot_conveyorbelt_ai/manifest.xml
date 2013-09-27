@@ -1,0 +1,23 @@
+<package>
+  <description brief="youbot_conveyorbelt_ai">
+
+     youbot_conveyorbelt_ai
+
+  </description>
+  <author>Jens</author>
+  <license>CC BY-NC-SA-  https://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+  <review status="unreviewed" notes=""/>
+  <url>https://github.com/robocup-at-work/wfwolves/youbot_conveyorbelt_ai</url>
+  <depend package="smach"/>
+  <depend package="smach_ros"/>
+  <depend package="geometry_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="rospy"/>
+  <depend package="tf"/>
+  <depend package="youbot_ik_solution_modifier"/>
+  <depend package="youbot_manipulation_vision"/>
+  <depend package="move_base_msgs"/>
+  <depend package="youbot_scanner_alignment"/>
+</package>
+
+

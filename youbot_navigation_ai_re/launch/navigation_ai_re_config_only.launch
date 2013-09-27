@@ -1,0 +1,8 @@
+<launch>
+    <!-- Load configuration files -->
+    <group ns="youbot_navigation_ai_re">
+        <rosparam file="$(find youbot_navigation_ai_re)/config/orientation.yaml" command="load" />
+        <rosparam file="$(find youbot_navigation_ai_re)/config/markers.yaml" command="load" />
+        <rosparam file="$(find youbot_navigation_ai_re)/config/misc.yaml" command="load" />
+    </group>
+</launch>

@@ -1,0 +1,7 @@
+\subsubsection usage Usage
+\verbatim
+<node name="dynamic_reconfigure_node" pkg="youbot_scanner_lines" type="dynamic_reconfigure_node">
+  <param name="scanner_lines_filter_dequeSize" type="int" value="10" />
+</node>
+\endverbatim
+

@@ -1,0 +1,12 @@
+<launch>
+    <!-- Load configuration files -->
+    <group ns="youbot_manipulation_ai_re">
+        <rosparam file="$(find youbot_manipulation_ai_re)/config/service_areas.yaml" command="load" />
+        <rosparam file="$(find youbot_manipulation_ai_re)/config/misc.yaml" command="load" />
+        <rosparam file="$(find youbot_manipulation_ai_re)/config/objects.yaml" command="load" />
+        <rosparam file="$(find youbot_manipulation_ai_re)/config/camera.yaml" command="load" />
+        <rosparam file="$(find youbot_manipulation_ai_re)/config/circle.yaml" command="load" />
+        <rosparam file="$(find youbot_manipulation_ai_re)/config/line.yaml" command="load" />
+        <rosparam file="$(find youbot_manipulation_ai_re)/config/zigzag.yaml" command="load" />
+    </group>
+</launch>

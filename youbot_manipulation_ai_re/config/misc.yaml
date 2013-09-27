@@ -1,0 +1,15 @@
+misc/joint_start_position: 
+    x: 0.25699999999999986
+    y: 0.0
+    z: 0.1300000000000004
+    roll: 0.3
+    pitch: 2.970796326794898
+    yaw: 0.0
+misc/angle_offset: 2.9234289553007162
+misc/max_center_point_dist: 10.0
+misc/arm_step_range: 0.003
+misc/base_step_range: 0.02
+misc/angle_step_range: 0.04
+misc/adjust_arm_threshold: 5.0
+misc/image_timeout: 5.0
+misc/wait_for_image_loop_rate: 2

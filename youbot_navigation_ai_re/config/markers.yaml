@@ -1,0 +1,56 @@
+markers/markerCount: 13
+markers/marker0:
+    name: 'MAP_ZERO'
+    x-pos: 0.422
+    y-pos: -0.5
+markers/marker1:
+    name: 'C1'
+    x-pos: 2.601
+    y-pos: -0.243 
+markers/marker2:
+    name: 'S1'
+    x-pos: 4.376
+    y-pos: -2.05
+markers/marker3:
+    name: 'S2'
+    x-pos: 3.875
+    y-pos: -1.466
+markers/marker4:
+    name: 'S3'
+    x-pos: 3.221
+    y-pos: -0.839
+markers/marker5:
+    name: 'S4'
+    x-pos: 3.309
+    y-pos: -1.529
+
+
+markers/marker6:
+    name: 'S5'
+    x-pos: 1.776
+    y-pos: -3.101
+markers/marker7:
+    name: 'T1'
+    x-pos: 1.720
+    y-pos: -1.275
+markers/marker8:
+    name: 'T2'
+    x-pos: 3.505
+    y-pos: -2.720
+markers/marker9:
+    name: 'T3'
+    x-pos: 2.607
+    y-pos: -3.522
+markers/marker10:
+    name: 'T4'
+    x-pos: 0.393
+    y-pos: -3.83
+markers/marker11:
+    name: 'D1'
+    x-pos: 1.624
+    y-pos: -4.57
+
+markers/marker12:
+    name: 'D2'
+    x-pos: -0.377
+    y-pos: -2.53

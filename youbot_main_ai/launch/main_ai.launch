@@ -1,0 +1,19 @@
+<launch>
+    <include file="$(find youbot_main_ai)/launch/main_ai_config_only.launch" />
+    <include file="$(find youbot_navigation_ai_re)/launch/navigation_ai_re_config_only.launch" />
+    <include file="$(find youbot_manipulation_ai_re)/launch/manipulation_ai_config_only.launch" />
+    <include file="$(find youbot_transportation_ai)/launch/transportation_ai_config_only.launch" />
+    <include file="$(find youbot_scanner_alignment)/launch/scanner_alignment_action_server.launch" />
+    <!--<node pkg="youbot_main_ai" type="actuator_interceptor.py" name="actuator_interceptor" output="screen">
+    </node>
+    -->
+    <node required="true" pkg="youbot_main_ai" type="main_ai.py" name="youbot_main_ai" output="screen">
+        <!--<remap from="/cmd_vel" to="/cmd_vel_in" />
+        <remap from="/arm_1/arm_controller/position_command" to="position_command_in" />
+        -->
+    </node>
+    <node required="true" pkg="youbot_scanner_lines" type="YoubotScannerLines" name="YoubotScannerLines" output="screen">
+    </node>
+    <node required="true" pkg="youbot_scanner_lines" type="YoubotScannerLinesFilter" name="YoubotScannerLinesFilter" output="screen">
+    </node>
+</launch>

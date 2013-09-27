@@ -1,0 +1,10 @@
+# Define the goal
+float32 front_distance
+float32 side_difference
+float32 tolerance
+---
+# Define the result
+bool goal_reatched
+---
+# Define a feedback message
+float32 percent_complete

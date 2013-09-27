@@ -1,0 +1,11 @@
+\subsubsection usage Usage
+\verbatim
+<node name="dynamic_reconfigure_node" pkg="youbot_manipulation_vision" type="dynamic_reconfigure_node">
+  <param name="vision_threshold_binary" type="int" value="95" />
+  <param name="vision_canny_threshold" type="int" value="40" />
+  <param name="vision_corner_threshold" type="int" value="25" />
+  <param name="vision_keep_object_count" type="int" value="4" />
+  <param name="vision_min_objekt_size" type="int" value="4000" />
+</node>
+\endverbatim
+

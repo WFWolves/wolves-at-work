@@ -1,0 +1,25 @@
+orientation/orientationCount: 4
+orientation/o0:
+    name: 'W'
+    x: 0.0
+    y: 0.0
+    z: 0.9
+    w: 0.435
+orientation/o1:
+    name: 'E'
+    x: 0.0
+    y: 0.0
+    z: -0.391
+    w: 0.921
+orientation/o2:
+    name: 'S'
+    x: 0.0
+    y: 0.0
+    z: 0.937
+    w: -0.35
+orientation/o3:
+    name: 'N'
+    x: 0.0
+    y: 0.0
+    z: 0.348
+    w: 0.937

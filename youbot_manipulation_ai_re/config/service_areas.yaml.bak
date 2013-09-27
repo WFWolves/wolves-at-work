@@ -1,0 +1,34 @@
+service_areas/service_area_count: 3
+
+service_areas/service_area1:
+    name: 'S1'
+    height: 0.04
+    xpos: 0.0
+    ypos: 0.0
+    lPointX: 2.54
+    lPointY: -2.845
+    rPointX: 2.375
+    rPointY: -2.734
+    orientation: "S"
+
+service_areas/service_area2:
+    name: 'S2'
+    height: 0.04
+    xpos: 0.0
+    ypos: 0.0
+    lPointX: 2.043
+    lPointY: -2.784
+    rPointX: 1.673
+    rPointY: -2.795
+    orientation: "S"
+
+service_areas/service_area3:
+    name: 'S3'
+    height: 0.04
+    xpos: 0.0
+    ypos: 0.0
+    lPointX: 0.0
+    lPointY: 0.0
+    rPointX: 0.0
+    rPointY: 0.0
+    orientation: "S"

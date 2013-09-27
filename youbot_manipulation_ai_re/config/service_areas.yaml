@@ -1,0 +1,22 @@
+service_areas/service_area1: {height: 0.045, lPointX: 1.5601744651794434, lPointY: -1.4905965328216553,
+  name: S1, orientation: S, rPointX: 1.4877549409866333, rPointY: -0.9686228036880493,
+  xpos: 0.0, ypos: 0.0}
+service_areas/service_area2: {height: 0.045, lPointX: 1.8769043684005737, lPointY: 1.7472560405731201,
+  name: S2, orientation: S, rPointX: 1.820927381515503, rPointY: 2.2779479026794434,
+  xpos: 0.0, ypos: 0.0}
+service_areas/service_area3: {height: 0.045, lPointX: 2.7876574993133545, lPointY: 1.2475552558898926,
+  name: S3, orientation: N, rPointX: 2.7656495571136475, rPointY: 0.4339330196380615,
+  xpos: 0.0, ypos: 0.0}
+service_areas/service_area4: {height: 0.045, lPointX: 3.878044605255127, lPointY: 0.4639478921890259,
+  name: S4, orientation: S, rPointX: 3.833578586578369, rPointY: 1.306882381439209,
+  xpos: 0.0, ypos: 0.0}
+service_areas/service_area5: {height: 0.045, lPointX: 6.189855575561523, lPointY: -0.8222053050994873,
+  name: S5, orientation: N, rPointX: 6.117275238037109, rPointY: -1.1865772008895874,
+  xpos: 0.0, ypos: 0.0}
+service_areas/service_area6: {height: 0.045, lPointX: 6.0863037109375, lPointY: 0.09834107756614685,
+  name: S6, orientation: N, rPointX: 6.108625888824463, rPointY: -0.42567193508148193,
+  xpos: 0.0, ypos: 0.0}
+service_areas/service_area7: {height: 0.045, lPointX: 6.080831050872803, lPointY: 1.1833723783493042,
+  name: S7, orientation: N, rPointX: 6.087752342224121, rPointY: 0.47961127758026123,
+  xpos: 0.0, ypos: 0.0}
+service_areas/service_area_count: 7

@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="youbot_scanner_alignment" name="youbot_scanner_alignment" type="youbot_scanner_alignment.py" output="screen"/>
+</launch>

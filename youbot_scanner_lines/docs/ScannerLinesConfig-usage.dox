@@ -1,0 +1,16 @@
+\subsubsection usage Usage
+\verbatim
+<node name="dynamic_reconfigure_node" pkg="youbot_scanner_lines" type="dynamic_reconfigure_node">
+  <param name="scanner_lines_clusterMinSize" type="int" value="5" />
+  <param name="scanner_lines_clusterMaxSize" type="int" value="25000" />
+  <param name="scanner_lines_clusterTolerance" type="double" value="0.1" />
+  <param name="scanner_lines_clusterCloud" type="bool" value="False" />
+  <param name="scanner_lines_keepCloudFraction" type="double" value="0.1" />
+  <param name="scanner_lines_cropMinX" type="double" value="0.0" />
+  <param name="scanner_lines_cropMinY" type="double" value="-0.1" />
+  <param name="scanner_lines_cropMaxX" type="double" value="0.5" />
+  <param name="scanner_lines_cropMaxY" type="double" value="0.1" />
+  <param name="scanner_lines_sacModelDistance" type="double" value="0.01" />
+</node>
+\endverbatim
+

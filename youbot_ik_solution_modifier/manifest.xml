@@ -1,0 +1,17 @@
+<package>
+  <description brief="youbot_ik_solution_modifier">
+
+     youbot_ik_solution_modifier
+
+  </description>
+  <author>Jens Huebner</author>
+  <license>CC BY-NC-SA-  https://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+  <review status="unreviewed" notes=""/>
+  <url>https://github.com/robocup-at-work/wfwolves/youbot_ik_solution_modifier</url>
+  <depend package="rospy"/>
+  <depend package="brics_actuator"/>
+  <depend package="youbot_manipulation_scripts"/>
+
+</package>
+
+

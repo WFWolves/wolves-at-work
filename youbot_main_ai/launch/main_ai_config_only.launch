@@ -1,0 +1,7 @@
+<launch>
+    <!-- Load configuration files -->
+    <group ns="youbot_main_ai">
+        <rosparam file="$(find youbot_main_ai)/config/refbox.yaml" command="load" />
+        <param name="intercept_actuator" type="bool" value="false" />
+    </group>
+</launch>

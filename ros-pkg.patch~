@@ -1,0 +1,369 @@
+Nur in ./public_codeKopie/youbot-ros-pkg/: .git.
+Nur in ./public_codeKopie/youbot-ros-pkg/: .gitignore.
+diff -upr ./public_codeKopie/youbot-ros-pkg/README.md ./public_code/youbot-ros-pkg/README.md
+--- ./public_codeKopie/youbot-ros-pkg/README.md	2013-09-20 09:09:42.008562088 +0200
++++ ./public_code/youbot-ros-pkg/README.md	2013-09-20 09:03:16.066648304 +0200
+@@ -1,54 +1 @@
+-# youbot-ros-pkg Installation
+-===============
+-
+-## Install Ubuntu
+-The repository and its related components have been tested under the following Ubuntu distributions:
+-
+-- Ubuntu 10.04 (ROS Electric, ROS Fuerte)
+-- Ubuntu 11.10 (ROS Electric, ROS Fuerte)
+-- Ubuntu 12.04 (ROS Fuerte)
+-
+-If you do not have a Ubuntu distribution on your computer you can download it here
+-
+-     http://www.ubuntu.com/download
+-
+-## Git - Version Control
+-### Install Git Software
+-Install the Git core components:
+-
+-     sudo apt-get install git-core
+-
+-
+-## ROS - Robot Operating System
+-### Install ROS Fuerte
+-The repository has been tested successfully with the following ROS distributions. Use the link behind a ROS distribution to get to the particular ROS installation instructions.
+-
+-- ROS Fuerte - http://www.ros.org/wiki/fuerte/Installation/Ubuntu
+-- ROS Electric - http://www.ros.org/wiki/electric/Installation/Ubuntu
+-
+-NOTE: Do not forget to update your .bashrc! 
+-
+-
+-## Clone and compile the youbot-ros-pkg Software
+-First of all you have to clone the RoboCupAtHome repository.
+-
+-    cd ~/ros_stacks
+-    git clone git@github.com:youbot/youbot-ros-pkg.git
+-    cd ~/ros_stacks/youbot-ros-pkg
+-
+-Switch to the correct branch:
+-
+-    git checkout electric --  if you want to work with ros electric
+-    git checkout fuerte -- if you want to work with ros fuerte
+-
+-Then go on with installing further external dependencies:
+-    
+-    sudo easy_install -U rosinstall vcstools
+-
+-    ./repository.debs
+-    rosinstall .. /opt/ros/fuerte repository.rosinstall
+-    
+-    echo "export ROS_PACKAGE_PATH=~/ros_stacks:\$ROS_PACKAGE_PATH" >> ~/.bashrc
+-    source ~/.bashrc
+-    
+-
++see https://github.com/youbot/youbot-ros-pkg/blob/master/README.md
+diff -upr ./public_codeKopie/youbot-ros-pkg/repository.debs ./public_code/youbot-ros-pkg/repository.debs
+--- ./public_codeKopie/youbot-ros-pkg/repository.debs	2013-09-20 09:09:42.008562088 +0200
++++ ./public_code/youbot-ros-pkg/repository.debs	2013-09-20 09:03:16.066648304 +0200
+@@ -1,7 +1 @@
+-# /bin/bash
+-
+-### install debian packages
+ sudo apt-get install -y build-essential cmake subversion libboost-dev libopencv2.3-dev libeigen3-dev ros-fuerte-laser-drivers ros-fuerte-navigation ros-fuerte-pr2-common ros-fuerte-common-tutorials ros-fuerte-control ros-fuerte-arm-navigation ros-fuerte-vision-opencv ros-fuerte-pr2-mechanism ros-fuerte-pr2-controllers ros-fuerte-cob-common
+-
+-### install further repositories
+-rosinstall .. /opt/ros/fuerte repository.rosinstall
+Nur in ./public_codeKopie/youbot-ros-pkg/youbot_common: CMakeLists.txt.
+Nur in ./public_codeKopie/youbot-ros-pkg/youbot_common: Makefile.
+Nur in ./public_codeKopie/youbot-ros-pkg/youbot_common: stack.xml.
+Nur in ./public_codeKopie/youbot-ros-pkg/youbot_common/youbot_description: controller.
+Nur in ./public_codeKopie/youbot-ros-pkg/youbot_common/youbot_description: controller_plugins.xml.
+Nur in ./public_codeKopie/youbot-ros-pkg/youbot_common/youbot_description: examples.
+Nur in ./public_codeKopie/youbot-ros-pkg/youbot_common/youbot_description: include.
+Nur in ./public_codeKopie/youbot-ros-pkg/youbot_common/youbot_description: Media.
+Nur in ./public_codeKopie/youbot-ros-pkg/youbot_common/youbot_description: robots.
+Nur in ./public_codeKopie/youbot-ros-pkg/youbot_common/youbot_description: src.
+Nur in ./public_codeKopie/youbot-ros-pkg/youbot_common/youbot_description: urdf.
+Nur in ./public_codeKopie/youbot-ros-pkg/youbot_common: youbot_trajectory_action_server.
+Nur in ./public_code/youbot-ros-pkg/youbot_drivers/youbot_oodl: bin.
+Nur in ./public_code/youbot-ros-pkg/youbot_drivers/youbot_oodl: build.
+diff -upr ./public_codeKopie/youbot-ros-pkg/youbot_drivers/youbot_oodl/src/YouBotOODLWrapper.cpp ./public_code/youbot-ros-pkg/youbot_drivers/youbot_oodl/src/YouBotOODLWrapper.cpp
+--- ./public_codeKopie/youbot-ros-pkg/youbot_drivers/youbot_oodl/src/YouBotOODLWrapper.cpp	2013-09-20 09:09:42.060562345 +0200
++++ ./public_code/youbot-ros-pkg/youbot_drivers/youbot_oodl/src/YouBotOODLWrapper.cpp	2013-09-20 09:03:05.382595320 +0200
+@@ -799,8 +799,8 @@ void YouBotOODLWrapper::computeOODLSenso
+          * We actually flipp the directions of the wheel on the right side such that the standard ROS controllers
+          * (e.g. for PR2) can be used for the youBot
+          */
+-        baseJointStateMessage.position[0] = -baseJointStateMessage.position[0];
+         baseJointStateMessage.position[2] = -baseJointStateMessage.position[2];
++        baseJointStateMessage.position[4] = -baseJointStateMessage.position[4];
+ 
+     }
+ 
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common: bin.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common: build.
+diff -upr ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/config/base_local_planner_params.yaml ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/config/base_local_planner_params.yaml
+--- ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/config/base_local_planner_params.yaml	2013-09-20 09:09:42.060562345 +0200
++++ ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/config/base_local_planner_params.yaml	2013-09-20 09:03:09.830617377 +0200
+@@ -9,6 +9,7 @@ TrajectoryPlannerROS:
+     min_in_place_rotational_vel: 0.1
+     escape_vel: -0.1
+     holonomic_robot: true
++    y_vels: [-0.5, -0.1, 0.1, 0.5]
+ 
+     # Goal Tolerance Parameters
+     xy_goal_tolerance: 0.1
+@@ -25,8 +26,63 @@ TrajectoryPlannerROS:
+     path_distance_bias: 0.6
+     occdist_scale: 0.01
+     heading_lookahead: 0.325
+-    dwa: false
++    dwa: true
+ 
+     # Oscillation Prevention Parameters
+-    oscillation_reset_dist: 0.01
++    oscillation_reset_dist: 0.40
++
++DWAPlannerROS:
++    acc_lim_x: 1.25
++    acc_lim_y: 1.25
++    acc_lim_th: 1.6
++    max_trans_vel: 0.76
++    min_trans_vel: 0.0
++    max_vel_x: 0.76
++    min_vel_x: -0.76
++    max_vel_y: 0.76
++    min_vel_y: -0.76
++    max_rot_vel: 0.76
++    min_rot_vel: -0.76 #0.0
++
++    yaw_goal_tolerance: 0.05
++    xy_goal_tolerance: 0.10
++    latch_xy_goal_tolerance: false
++
++    sim_time: 1.7
++    sim_granularity: 0.025
++    vx_samples: 3
++    vy_samples: 10
++    vtheta_samples: 20
++    penalize_negative_x: false
++
++    path_distance_bias: 0.0
++    goal_distance_bias: 24.0
++    occdist_scale: 0.01
++    forward_point_distance: 0.0
++    stop_time_buffer: 0.2
++    scaling_speed: 0.25
++    max_scaling_factor: 0.2
++
++    oscillation_reset_dist: 0.05
++
++    meter_scoring: true
++
++    prune_plan: true
++
++EBandPlannerROS:
++  #Set the acceleration limits of the robot
++  max_acceleration: 0.5
++  virtual_mass: 0.75
++  max_translational_acceleration: 0.5
++  max_rotational_acceleration: 1.5
++
++  #Set the velocity limits of the robot
++  max_vel_lin: 0.6
++  max_vel_th: 0.8
++  min_vel_lin: 0.1
++  min_vel_th: 0.0
++  min_in_place_vel_th: 0.0
++  in_place_trans_vel: 0.0
++
++  rotation_correction_threshold: 0.2
+ 
+diff -upr ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/config/costmap_common_params.yaml ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/config/costmap_common_params.yaml
+--- ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/config/costmap_common_params.yaml	2013-09-20 09:09:42.060562345 +0200
++++ ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/config/costmap_common_params.yaml	2013-09-20 09:03:09.830617377 +0200
+@@ -1,10 +1,10 @@
+ map_type: costmap
+-transform_tolerance: 0.2
+-obstacle_range: 2.5
+-raytrace_range: 3.0
+-inflation_radius: 0.25
++transform_tolerance: 10.5 #0.4
++obstacle_range: 2.0 #2.5
++raytrace_range: 2.0 #3.0
++inflation_radius: 0.10
+ 
+-observation_sources: base_scan
++observation_sources: base_scan base_scan_back
+ 
+ #base_scan_marking: {sensor_frame: base_scan_link,
+ #                    data_type: PointCloud2,
+@@ -19,10 +19,19 @@ observation_sources: base_scan
+ base_scan: {sensor_frame: base_laser_front_link,
+             data_type: LaserScan,
+             topic: /base_scan,
+-            expected_update_rate: 0.2,
++            expected_update_rate: 0.4,
+             observation_persistence: 0.0,
+             marking: true,
+             clearing: true,
+             min_obstacle_height: -0.10,
+             max_obstacle_height: 2.0}
+ 
++base_scan_back: {sensor_frame: base_laser_back_link,
++            data_type: LaserScan,
++            topic: /base_scan_back,
++            expected_update_rate: 0.4,
++            observation_persistence: 0.0,
++            marking: true,
++            clearing: true,
++            min_obstacle_height: -0.10,
++            max_obstacle_height: 2.0}
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/config: costmap_common_params.yaml.1.
+diff -upr ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/config/move_base_params.yaml ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/config/move_base_params.yaml
+--- ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/config/move_base_params.yaml	2013-09-20 09:09:42.060562345 +0200
++++ ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/config/move_base_params.yaml	2013-09-20 09:03:09.830617377 +0200
+@@ -1,15 +1,20 @@
+-#change this
+-footprint: [[0.26, 0.18],
+-            [0.26, 0.014],
+-            [0.31, 0.014],
+-            [0.31, -0.014],
+-            [0.26, -0.014],
+-            [0.26, -0.18],
+-            [-0.27, -0.18],
+-            [-0.27, 0.18]]
++#change this new foot print 60cm x 40 cm
++footprint: [[0.30, 0.20],
++            [0.30, 0.05],
++            [0.37, 0.05],
++            [0.37, -0.05],
++            [0.30, -0.05],
++            [0.30, -0.20],
++            [-0.30, -0.20],
++            [-0.30, -0.11],
++            [-0.37, -0.11],
++            [-0.37, 0.11],
++            [-0.30, 0.11],
++            [-0.30, 0.20]]
+ 
+-controller_frequency: 10.0
++controller_frequency: 15.0
+ controller_patience: 15.0
+-clearing_radius: 0.25
+-footprint_padding: 0.03
++clearing_radius: 2.0 #0.25
++footprint_padding: 0.01
++planner_patience: 1
+ 
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/config: move_base_params.yaml.save.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/launch: base_back_hokuyo_node.launch.
+diff -upr ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/launch/base_front_hokuyo_node.launch ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/launch/base_front_hokuyo_node.launch
+--- ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/launch/base_front_hokuyo_node.launch	2013-09-20 09:09:42.060562345 +0200
++++ ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/launch/base_front_hokuyo_node.launch	2013-09-20 09:03:09.962618038 +0200
+@@ -2,14 +2,15 @@
+ 
+ 	<!-- start the hokuyo node -->
+ 	<node type="hokuyo_node" pkg="hokuyo_node" name="hokuyo_node">  
+-		<param name="min_ang" type="double" value="-1.3" />
+-		<param name="max_ang" type="double" value="1.3" />
++		<param name="min_ang" type="double" value="-1.74" />
++		<param name="max_ang" type="double" value="1.74" />
+ 		<remap from="/scan" to="/base_scan"/>
+-		<param name="port" type="string" value="/dev/sensors/hokuyo"/>
++		<param name="port" type="string" value="/dev/serial/by-path/pci-0000:00:1d.1-usb-0:2:1.0" />
++		<!--<param name="port" type="string" value="/dev/ttyACM1"/>-->
+ 	</node>
+ 
+ 	<!-- configure the transform for hokuyo -->
+ 	<node pkg="tf" type="static_transform_publisher" name="front_hokuyo_frame" 
+-	args="0 0 0 0 0 0 /base_laser_front_link /laser 1" />
++	args="0 0 0 0 0 0 /base_laser_front_link /laser 100" />
+ 	
+ </launch>
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/launch: base_front_hokuyo_node.launch.1.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/launch: bringup_navigation.launch.1.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/launch: com_base_back_hokuyo_node.launch.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_common/launch: com_base_front_hokuyo_node.launch.
+diff -upr ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/config/global_costmap_params.yaml ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/config/global_costmap_params.yaml
+--- ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/config/global_costmap_params.yaml	2013-09-20 09:09:42.060562345 +0200
++++ ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/config/global_costmap_params.yaml	2013-09-20 09:03:08.162609103 +0200
+@@ -7,3 +7,4 @@ global_costmap:
+     publish_frequency: 0.0
+     static_map: true
+     rolling_window: false
++    inflation_radius: 0.45
+diff -upr ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/config/local_costmap_params.yaml ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/config/local_costmap_params.yaml
+--- ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/config/local_costmap_params.yaml	2013-09-20 09:09:42.060562345 +0200
++++ ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/config/local_costmap_params.yaml	2013-09-20 09:03:08.162609103 +0200
+@@ -4,7 +4,7 @@ local_costmap:
+     global_frame: odom
+     robot_base_frame: base_footprint
+     update_frequency: 5.0
+-    publish_frequency: 2.0
++    publish_frequency: 1.0
+     static_map: false
+     rolling_window: true
+     width: 10.0
+@@ -12,3 +12,4 @@ local_costmap:
+     resolution: 0.05
+     origin_x: 0.0
+     origin_y: 0.0
++    inflation_radius: 0.3
+diff -upr ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/config/move_base_params.yaml ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/config/move_base_params.yaml
+--- ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/config/move_base_params.yaml	2013-09-20 09:09:42.060562345 +0200
++++ ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/config/move_base_params.yaml	2013-09-20 09:03:08.162609103 +0200
+@@ -1 +1,2 @@
+ shutdown_costmaps: true
++#planner_patience: 1.0
+diff -upr ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/launch/amcl.launch ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/launch/amcl.launch
+--- ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/launch/amcl.launch	2013-09-20 09:09:42.060562345 +0200
++++ ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/launch/amcl.launch	2013-09-20 09:03:08.278609678 +0200
+@@ -1,7 +1,7 @@
+ <launch>
+ 	<!-- Run map server -->
+ 
+-<!-- 	<node name="map_server" pkg="map_server" type="map_server" args="$(find youbot_navigation_global)/map/hanoi_map.yaml"/>-->
++ 	<node name="map_server" pkg="map_server" type="map_server" args="$(find youbot_navigation_global)/map/map.yaml"/>
+ 
+ 
+ <!--
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/launch: bringup.launch.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/launch: gmapping.launch.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/launch: map.pgm.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/launch: map.yaml.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/launch: move_base_global_dwa.launch.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/launch: move_base_global_dwa.launch.bak.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/launch: move_base_global_eband.launch.
+diff -upr ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/launch/move_base_global.launch ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/launch/move_base_global.launch
+--- ./public_codeKopie/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/launch/move_base_global.launch	2013-09-20 09:09:42.060562345 +0200
++++ ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/launch/move_base_global.launch	2013-09-20 09:03:08.278609678 +0200
+@@ -2,17 +2,17 @@
+     <!-- Throttle the voxel grid that is being published for rviz -->
+    <!-- <node ns="move_base_node/local_costmap" name="voxel_grid_throttle" pkg="topic_tools" type="throttle" args="messages voxel_grid 3.0 voxel_grid_throttled" /> -->
+     
+-    <param name="T" type="double" value="0.2"/>
++    <!--<param name="T" type="double" value="0.2"/>
+     <param name="dt" type="double" value="0.1"/>
+     <node pkg="youbot_navigation_common" type="lowpass_filter" respawn="false" name="lowpass_filter" output="screen">
+         
+-    </node>
++    </node>-->
+  
+ 	
+     <!-- for moving -->
+     <node pkg="move_base" type="move_base" respawn="false" name="move_base_node" output="screen">
+         <!-- Load common configuration files -->
+-	<remap from="cmd_vel" to="move_base/cmd_vel"/> 
++	<!--<remap from="cmd_vel" to="move_base/cmd_vel"/> -->
+         <rosparam file="$(find youbot_navigation_common)/config/move_base_params.yaml" command="load" />
+         <rosparam file="$(find youbot_navigation_common)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+         <rosparam file="$(find youbot_navigation_common)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/map: map_germanOpen.pgm.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/map: map_germanOpen.yaml.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/map: map_nl.pgm.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/map: map_old.pgm.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/map: map.pgm.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/map: map_resized.pgm.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/map: map_resized.yaml.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/map: map_wf.pgm.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/map: map_wf.yaml.
+Nur in ./public_code/youbot-ros-pkg/youbot_navigation/youbot_navigation_global/map: map.yaml.
+Nur in ./public_code/youbot-ros-pkg/: youbot_navigation.bak.zip.

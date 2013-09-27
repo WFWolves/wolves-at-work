@@ -1,0 +1,10 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~vision_threshold_binary" : \b [int] The binary threshold value used to seperate black objects from the white background. min: 0, default: 95, max: 255
+- \b "~vision_canny_threshold" : \b [int] The canny threshold value used to distinguish the smooth cylinder from the rough one. min: 0, default: 40, max: 255
+- \b "~vision_corner_threshold" : \b [int] The number of corners before to detect a small cylinder as rough small cylinder. min: 0, default: 25, max: 300
+- \b "~vision_keep_object_count" : \b [int] The maximum number of objects too keep in the detected objects min: 0, default: 4, max: 50
+- \b "~vision_min_objekt_size" : \b [int] The minimum size of an object before the object gets filtered out min: 0, default: 4000, max: 100000
+

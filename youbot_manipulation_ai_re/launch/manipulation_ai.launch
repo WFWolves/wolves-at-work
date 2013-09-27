@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find youbot_navigation_ai_re)/launch/navigation_ai_re_config_only.launch" />
+    <include file="$(find youbot_manipulation_ai_re)/launch/manipulation_ai_config_only.launch" />
+    <include file="$(find youbot_scanner_alignment)/launch/scanner_alignment_action_server.launch" />
+    <node pkg="youbot_manipulation_ai_re" type="manipulation_ai.py" name="youbot_manipulation_ai_re" output="screen">
+    </node>
+</launch>

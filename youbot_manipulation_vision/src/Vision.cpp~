@@ -1,0 +1,153 @@
+//
+//  main.cpp
+//  Histofilter
+//
+//  Created by Jan Carstensen on 21.06.12.
+//  ROS connection by Alexander Gabel
+//  Copyright (c) 2012 WF Wolves. All rights reserved.
+//
+#include "ros/ros.h"
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/core/core.hpp"
+#include <cv_bridge/cv_bridge.h>
+#include <sensor_msgs/image_encodings.h>
+#include <image_transport/image_transport.h>
+#include <geometry_msgs/Polygon.h>
+#include <geometry_msgs/Point32.h>
+#include <cassert>
+#include <iostream>
+#include <sstream>
+#include <vector>
+
+#define IMAGE_IN_TOPIC "/usb_cam/image_raw"
+#define IMAGE_THRESH_TOPIC "/vision_thresholded"
+#define IMAGE_DEBUG_TOPIC "/vision_debug"
+#define BOXES_TOPIC "/vision_boxes"
+
+using namespace cv;
+using namespace std;
+
+image_transport::Publisher pub_thresholded;
+image_transport::Publisher pub_debug;
+ros::Publisher pub_boxes;
+
+void image_cb (const sensor_msgs::ImagePtr& image) {
+    int threshold_value;
+    ros::param::param<std::string>("default_param", default_param, "default_value");    
+    int threshold_type = 3;
+    int const max_value = 255;
+    int const max_type = 4;
+    int const max_BINARY_value = 255;
+    Mat grey, filtered;
+    static long imcount = 0;
+    cout << "Image "<< ++imcount <<" recieved" << endl;
+    cv_bridge::CvImagePtr cv_ptr;
+    cv_bridge::CvImagePtr cv_pthresholded(new cv_bridge::CvImage());
+    cv_bridge::CvImagePtr cv_pdebug(new cv_bridge::CvImage());
+    sensor_msgs::ImagePtr msg_thresholded;
+    sensor_msgs::ImagePtr msg_debug;
+    try
+    {
+        cv_ptr = cv_bridge::toCvCopy(image, sensor_msgs::image_encodings::BGR8);
+    }
+    catch (cv_bridge::Exception& e)
+    {
+        ROS_ERROR("cv_bridge exception: %s", e.what());
+        return;
+    }
+    Mat frame = cv_ptr->image.clone();
+    
+    cvtColor( frame, grey, CV_RGB2GRAY );  
+    
+    threshold( grey, filtered, threshold_value, max_BINARY_value, 1 ); //Binary Inverted
+    
+    try
+    {
+        cv_pthresholded->image = filtered;
+        cv_pthresholded->header = cv_ptr->header;
+        cv_pthresholded->encoding = sensor_msgs::image_encodings::MONO8;
+        msg_thresholded = cv_pthresholded->toImageMsg();
+    }
+    catch (cv_bridge::Exception& e)
+    {
+        ROS_ERROR("cv_bridge exception: %s", e.what());
+        return;
+    }
+    pub_thresholded.publish(msg_thresholded);
+    
+    
+    vector<vector<Point> > contours;
+    vector<Vec4i> hierarchy;
+    
+    findContours(filtered, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
+    
+    /// Approximate contours to polygons + get bounding rects and circles
+    vector<vector<Point> > contours_poly( contours.size() );
+    vector<Rect> boundRect( contours.size() );
+    
+    for( int i = 0; i < contours.size(); i++ )
+    { 
+        approxPolyDP( Mat(contours[i]), contours_poly[i], 3, true );
+        boundRect[i] = boundingRect( Mat(contours_poly[i]) );
+    }
+    
+    /// Draw polygonal contour + bonding rects + circles
+    Mat drawing = frame.clone();
+    for( int i = 0; i < contours.size(); i++ )
+    {
+        Scalar color = Scalar( 0,0,0 );
+        rectangle( drawing, boundRect[i].tl(), boundRect[i].br(), color, 2, 8, 0 );
+        geometry_msgs::Polygon poly;
+        geometry_msgs::Point32 p1;
+        geometry_msgs::Point32 p2;
+        p1.x=boundRect[i].tl().x;
+        p1.y=boundRect[i].tl().y;
+        p1.z=0;
+        p2.x=boundRect[i].br().x;
+        p2.y=boundRect[i].br().y;
+        p2.z=0;
+        poly.points.push_back(p1);
+        poly.points.push_back(p2);
+        pub_boxes.publish(poly);
+    }
+    
+    try
+    {
+        cv_pdebug->image = drawing;
+        cv_pdebug->header = cv_ptr->header;
+        cv_pdebug->encoding = sensor_msgs::image_encodings::BGR8;
+        msg_debug = cv_pdebug->toImageMsg();
+    }
+    catch (cv_bridge::Exception& e)
+    {
+        ROS_ERROR("cv_bridge exception: %s", e.what());
+        return;
+    }
+    pub_debug.publish(msg_debug);
+    
+    
+    cv_pthresholded->image.release();
+    cv_pdebug->image.release();
+    
+    
+}
+
+int main (int argc, char** argv)
+{
+    //Init ROS node
+    ros::init(argc, argv, "youbot_manipulation_vision");
+    //Get the node handle
+    ros::NodeHandle nh;
+    
+    image_transport::ImageTransport it(nh);
+    pub_thresholded = it.advertise(IMAGE_THRESH_TOPIC, 1);
+    pub_debug = it.advertise(IMAGE_DEBUG_TOPIC, 1);
+    pub_boxes = nh.advertise<geometry_msgs::Polygon>(BOXES_TOPIC, 1);
+    
+    ros::Subscriber sub_cam = nh.subscribe<const sensor_msgs::ImagePtr&>(IMAGE_IN_TOPIC, 1, &image_cb);
+    
+    ros::spin();
+
+    return 0;
+}

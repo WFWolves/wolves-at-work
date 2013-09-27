@@ -1,0 +1,25 @@
+<package>
+  <description brief="youbot_manipulation_scripts">
+
+     youbot_manipulation_scripts
+
+  </description>
+  <author>Alexander Gabel</author>
+  <license>CC BY-NC-SA-  https://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+  <review status="unreviewed" notes=""/>
+  <url>https://github.com/robocup-at-work/wfwolves/youbot_manipulation_scripts</url>
+  <depend package="rospy"/>
+  <depend package="actionlib"/>
+  <depend package="tf"/>
+  <depend package="geometry_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="control_msgs"/>
+  <depend package="kinematics_msgs"/>
+  <depend package="trajectory_msgs"/>
+  <depend package="arm_navigation_msgs"/>
+  <depend package="brics_actuator"/>
+  <depend package="youbot_generic_scripts"/>
+
+</package>
+
+

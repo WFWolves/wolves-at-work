@@ -1,0 +1,16 @@
+<package>
+  <description brief="youbot_generic_scripts">
+
+     youbot_generic_scripts
+
+  </description>
+  <author>Alexander Gabel</author>
+  <license>CC BY-NC-SA-  https://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+  <review status="unreviewed" notes=""/>
+  <url>https://github.com/robocup-at-work/wfwolves/youbot_generic_scripts</url>
+  <depend package="rospy" />
+  <depend package="rosgraph_msgs" />
+
+</package>
+
+

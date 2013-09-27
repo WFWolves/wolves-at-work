@@ -1,0 +1,22 @@
+<package>
+  <description brief="youbot_scanner_lines">
+
+     youbot_scanner_lines
+
+  </description>
+  <author>Alexander Gabel, Philipp Wentscher</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>https://github.com/robocup-at-work/wfwolves/youbot_scanner_lines</url>
+  <depend package="sensor_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="roscpp"/>
+  <depend package="pcl"/>
+  <depend package="pcl_ros"/>
+  <depend package="laser_geometry"/>
+  <depend package="visualization_msgs"/>
+  <depend package="tf"/>
+
+</package>
+
+

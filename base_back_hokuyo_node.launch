@@ -1,0 +1,17 @@
+<launch>
+
+	<!-- start the hokuyo node -->
+	<node type="hokuyo_node" pkg="hokuyo_node" name="hokuyo_node_back">  
+		<param name="min_ang" type="double" value="-1.74" />
+		<param name="max_ang" type="double" value="1.74" />
+		<remap from="/scan" to="/base_scan_back"/>
+		<param name="port" type="string" value="/dev/serial/by-path/pci-0000:00:1d.1-usb-0:1:1.0"/>
+		<!--<param name="port" type="string" value="/dev/ttyACM0"/>-->
+		<param name="frame_id" type="string" value="laser_back" />
+	</node>
+
+	<!-- configure the transform for hokuyo -->
+	<node pkg="tf" type="static_transform_publisher" name="back_hokuyo_frame" 
+	args="0 0 0 0 0 0 /base_laser_back_link /laser_back 100" />
+	
+</launch>

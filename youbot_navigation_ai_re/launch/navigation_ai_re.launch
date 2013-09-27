@@ -1,0 +1,5 @@
+<launch>
+    <include file="$(find youbot_navigation_ai_re)/launch/navigation_ai_re_config_only.launch" />
+    <node pkg="youbot_navigation_ai_re" type="navigation_ai_re.py" name="youbot_navigation_ai_re" output="screen">
+    </node>
+</launch>

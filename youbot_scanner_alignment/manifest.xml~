@@ -1,0 +1,21 @@
+<package>
+  <description brief="youbot_scanner_alignment">
+
+     youbot_scanner_alignment
+
+  </description>
+  <author>Philipp Wentscher</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://robocup.ostfalia.de</url>
+  <depend package="sensor_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="rospy"/>
+  <depend package="smach" />
+  <depend package="smach_ros" />
+  <depend package="actionlib"/>
+  <depend package="actionlib_msgs"/>
+  <depend package="youbot_scanner_lines"/>
+</package>
+
+

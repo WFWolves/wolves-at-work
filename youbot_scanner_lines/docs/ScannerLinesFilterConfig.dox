@@ -1,0 +1,6 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~scanner_lines_filter_dequeSize" : \b [int] How many msgs should be processed for the average min: 1, default: 10, max: 100
+

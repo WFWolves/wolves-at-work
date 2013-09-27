@@ -1,0 +1,22 @@
+<package>
+  <description brief="youbot_manipulation_vision">
+
+     youbot_manipulation_vision
+
+  </description>
+  <author>Alexander Gabel</author>
+  <license>CC BY-NC-SA-  https://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+  <review status="unreviewed" notes=""/>
+  <url>https://github.com/robocup-at-work/wfwolves/youbot_manipulation_vision</url>
+  <depend package="std_msgs"/>
+  <depend package="image_transport"/>
+  <depend package="roscpp"/>
+  <depend package="opencv2"/>
+  <depend package="cv_bridge"/>
+  <depend package="image_geometry"/>
+  <depend package="sensor_msgs"/>
+  <depend package="dynamic_reconfigure" />
+
+</package>
+
+

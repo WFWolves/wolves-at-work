@@ -1,0 +1,5 @@
+<launch>
+<node pkg="youbot_manipulation_vision" type="Vision" name="youbot_manipulation_vision">
+	<param name="_image_transport" value="compressed" />
+</node>
+</launch>

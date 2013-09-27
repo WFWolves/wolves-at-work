@@ -1,0 +1,21 @@
+<package>
+  <description brief="youbot_scanner_alignment">
+
+     youbot_scanner_alignment
+
+  </description>
+  <author>Philipp Wentscher</author>
+  <license>CC BY-NC-SA-  https://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+  <review status="unreviewed" notes=""/>
+  <url>https://github.com/robocup-at-work/wfwolves/youbot_scanner_alignment</url>
+  <depend package="sensor_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="rospy"/>
+  <depend package="smach" />
+  <depend package="smach_ros" />
+  <depend package="actionlib"/>
+  <depend package="actionlib_msgs"/>
+  <depend package="youbot_scanner_lines"/>
+</package>
+
+

@@ -1,0 +1,74 @@
+service_areas/service_area_count: 7
+
+service_areas/service_area1:
+    name: 'S1'
+    height: 0.045
+    xpos: 0.0
+    ypos: 0.0
+    lPointX: 3.579
+    lPointY: -1.511
+    rPointX: 1.28
+    rPointY: 1.807
+    orientation: "S"
+
+service_areas/service_area2:
+    name: 'S2'
+    height: 0.045
+    xpos: 0.0
+    ypos: 0.0
+    lPointX: 0.458
+    lPointY: 2.781
+    rPointX: 0.81
+    rPointY: 2.378
+    orientation: "S"
+
+service_areas/service_area3:
+    name: 'S3'
+    height: 0.045
+    xpos: 0.0
+    ypos: 0.0
+    lPointX: 2.943
+    lPointY: -3.197
+    rPointX: 3.12
+    rPointY: -2.684
+    orientation: "N"
+service_areas/service_area4:
+    name: 'S4'
+    height: 0.045
+    xpos: 0.0
+    ypos: 0.0
+    lPointX: 3.935
+    lPointY: 0.542
+    rPointX: 3.725
+    rPointY: 0.0457
+    orientation: "S"
+service_areas/service_area5:
+    name: 'S5'
+    height: 0.045
+    xpos: 0.0
+    ypos: 0.0
+    lPointX: 5.815
+    lPointY: -0.756
+    rPointX: 5.821
+    rPointY: -1.164
+    orientation: "N"
+service_areas/service_area6:
+    name: 'S6'
+    height: 0.045
+    xpos: 0.0
+    ypos: 0.0
+    lPointX: 5.634
+    lPointY: 0.378
+    rPointX: 5.815
+    rPointY: -1.105
+    orientation: "N"
+service_areas/service_area7:
+    name: 'S7'
+    height: 0.045
+    xpos: 0.0
+    ypos: 0.0
+    lPointX: 5.879
+    lPointY: 1.013
+    rPointX: 5.800
+    rPointY: 0.509
+    orientation: "N"

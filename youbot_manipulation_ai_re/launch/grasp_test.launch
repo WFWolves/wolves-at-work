@@ -1,0 +1,6 @@
+<launch>
+	<!-- Load configuration files -->
+	<include file="$(find youbot_manipulation_ai_re)/launch/manipulation_ai_config_only.launch" />
+    <node pkg="grasp_test" type="grasp_ai.py" name="youbot_manipulation_ai_re" output="screen">
+    </node>
+</launch>

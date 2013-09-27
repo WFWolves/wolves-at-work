@@ -1,0 +1,9 @@
+<launch>
+    <node pkg="youbot_navigation_ai_re" type="youbot_navigation_ai_re.py" name="youbot_navigation_ai_re" output="screen">
+
+        <!-- Load configuration files -->
+        <rosparam file="$(find youbot_navigation_ai_re)/config/orientation.yaml" command="load" />
+        <rosparam file="$(find youbot_navigation_ai_re)/config/markers.yaml" command="load" />
+        <rosparam file="$(find youbot_navigation_ai_re)/config/misc.yaml" command="load" />
+    </node>
+</launch>
