@@ -1,8 +1,0 @@
-eclipse.preferences.version=1
-encoding//src/youbot_transportation_ai/states/ConstructManipMsg_state.py=utf-8
-encoding//src/youbot_transportation_ai/states/ConstructNavMsg_state.py=utf-8
-encoding//src/youbot_transportation_ai/states/Initialization_state.py=utf-8
-encoding//src/youbot_transportation_ai/states/SelectPlaceDst_state.py=utf-8
-encoding//src/youbot_transportation_ai/states/SelectPlaceSrc_state.py=utf-8
-encoding//src/youbot_transportation_ai/states/UpdateTaskSpec_state.py=utf-8
-encoding//src/youbot_transportation_ai/utils/task_specification_trans.py=utf-8
